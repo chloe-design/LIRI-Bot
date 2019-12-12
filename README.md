@@ -35,11 +35,9 @@ The application user will input 'movie this' command and then be prompted to ent
 
 The application user will input 'do what it says' command. The LIRI app will search the Spotify API and return a song.
 
-
+# Spotify API keys
 If you would like to clone this repo, you will have to include your own .env file with your personal Spotify ID and Secret.
 The format of your .env file should be as follows:
-# Spotify API keys
-
 SPOTIFY_ID=<your spotify id>
 SPOTIFY_SECRET=<your spotify secret>
 
