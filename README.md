@@ -3,7 +3,7 @@
 Similarly to Siri on ios platforms that interprets Speech, LIRI is a Language interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
 
  click here to view video:
- 
+
 # Technology Used:
 
 * Javascript
@@ -25,13 +25,13 @@ There are four commands available within this application that allows the user t
 * Do what it says 
 
 # Concert This
-The application user will input 'concert this' command. The user is then prompted for a band name. Liri then searches for the band name in the Bands in Town API and returns the results which is then added to the log text file.
+The application user will input 'search for concert' command. The user is then prompted for a band name. Liri then searches for the band name in the Bands in Town API and returns the results which is then added to the log text file.
 
 # Spotify this song
-The application user will input 'spotify this song" command. The user is then prompted for a song title. The Liri app then searches the Spotify API and returns the top results for the song title entered. This is also logged in the log.txt file.
+The application user will input 'search for song" command. The user is then prompted for a song title. The Liri app then searches the Spotify API and returns the top results for the song title entered. This is also logged in the log.txt file.
 
 # Movie This
-The application user will input 'movie this' command and then be prompted to enter a movie title. The LIRI app will then search the OMBD API and return movie data for the title entered. This movie title search is also added to the log.txt file.
+The application user will input 'search for a movie' command and then be prompted to enter a movie title. The LIRI app will then search the OMBD API and return movie data for the title entered. This movie title search is also added to the log.txt file.
 
 # Do what it says
 
