@@ -82,7 +82,7 @@ function spotify() {
 };
 
 function searchforconcert() {
-    // if no search command is entered, print Taylor Swift's concert info
+    // if no search command is entered, print Ariana Grande's concert info
     if (!searchResult) {
         searchResult = "Ariana Grande"
         console.log("\nIf you would like to search for a specific artist, please insert it after 'search for concert'.\nIn the meantime, here is the information for Taylor's upcoming event:")
