@@ -2,7 +2,8 @@
 
 Similarly to Siri on ios platforms that interprets Speech, LIRI is a Language interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
 
- click here to view video:
+ click here to view video: https://drive.google.com/file/d/1jxIY7tobP7tjmOJ1sKqsIWhhiMW3XSiw/view
+ 
 
 # Technology Used:
 

@@ -1,0 +1,24 @@
+{
+  "name": "LIRI-node-app",
+  "version": "1.0.0",
+  "description": "Similarly to Siri on ios platforms that interprets Speech, LIRI is a Language interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.",
+  "main": "keys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chloe-design/LIRI-node-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chloe-design/LIRI-node-app/issues"
+  },
+  "homepage": "https://github.com/chloe-design/LIRI-node-app#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "moment": "^2.24.0"
+  }
+}

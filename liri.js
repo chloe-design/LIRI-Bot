@@ -1,55 +1,49 @@
 //the dotenv package
 require("dotenv").config();
 
-//import the keys.js file
-import { spotify as _spotify } from "./keys.js";
-
-// require file systems
-import { appendFile, readFile } from "fs";
-
+var fs = require("fs");
 // require axios
-import { get } from "axios";
+var axios = require("axios");
 
 // require moment
-import moment from "moment";
+var moment = require("moment");
+
+// link keys.js file
+var keys = require("./keys.js");
 
 //Spotify Keys
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
 
-inquirer.prompt([
-    {
-        type: 'input',
-        name: 'command',
-        message: 'Enter in a request from: search for concert, search for song, search for a movie and do what it says',
-    }
+var userInput = process.argv[2];
+var searchResult = process.argv.slice(3).join(" ");
 
 
-]).then(function (response) {
-    switch (response.call) {
-        case "Search for Concert":
-            searchforconcert();
+function liriCommand(responseCall, searchResult){
+    switch (userInput) {
+        case "spotify-this-song":
+            spotifyThisSong();
             break;
-        case "Search for Song":
-            spotify();
+        case "concert-this":
+            concertThis();
             break;
-        case "Search for a Movie":
-            movie();
+        case "movie-this":
+            movieThis();
             break;
-        case "Do what it Says":
-            dowhatitsays();
+        case "do-what-it-says":
+            doThis();
             break;
 
         default:
             console.log("Please enter one of the following commands: 'search for concert', 'search for song', 'search for movie', 'do-what-it-says' followed by what you would like to search for.")
-            doThis();
+            //doThis();
     
     };
-
+}
 
     liriCommand(userInput, searchResult);
 
-    function spotify() {
+    function spotifyThisSong() {
         if (!searchResult) {
             searchResult = "Ain't No Mountain High enough"
             console.log("\n To search for a song enter the command 'search for song'.\n")
@@ -82,14 +76,14 @@ inquirer.prompt([
         });
     };
 
-    function searchforconcert() {
+    function concertThis() {
         // if no search command is entered, print Ariana Grande's concert info
         if (!searchResult) {
             searchResult = "Ariana Grande"
             console.log("\nTo search for a specific artist, please insert it after 'search for concert'.\n")
         };
         // get Bands in Town API
-        get("https://rest.bandsintown.com/artists/" + searchResult + "/events?app_id=codingbootcamp").then(
+        axios.get("https://rest.bandsintown.com/artists/" + searchResult + "/events?app_id=codingbootcamp").then(
             function (response) {
 
                 if (!response.data[0]) {
@@ -116,13 +110,13 @@ inquirer.prompt([
             })
     };
 
-    function movie() {
+    function movieThis() {
         if (!searchResult) {
             searchResult = "Mr. Nobody";
             console.log("\nTo search for a specific movie, please insert it after 'search for movie'.\n")
         };
         // get OMDb API
-        get("http://www.omdbapi.com/?t=" + searchResult + "&y=&plot=short&apikey=trilogy").then(
+        axios.get("http://www.omdbapi.com/?t=" + searchResult + "&y=&plot=short&apikey=trilogy").then(
             function (response) {
                 console.log("\n-----------------------\n\nMovie Title: " + response.data.Title +
                     "\nRelease Year: " + response.data.Year +
@@ -153,9 +147,9 @@ inquirer.prompt([
             });
     };
 
-    function dowhatitsays() {
+    function doThis() {
 
-        readFile("random.txt", "utf8", function (error, data) {
+        fs.readFile("random.txt", "utf8", function (error, data) {
             if (error) {
                 return console.log(error);
             }
@@ -174,4 +168,4 @@ inquirer.prompt([
             }
         });
     }
-});
+;
