@@ -69,7 +69,7 @@ function liriCommand(responseCall, searchResult){
 
             var logSpotify = "\n\n-----Spotify Log-----" + "\nArtist: " + artist + "\nSong: " + song + "\nAlbum: " + album + "\nSpotify Link: " + songUrl + "\n";
             // appending information to log.txt file
-            appendFile("log.txt", logSpotify, function (error) {
+            fs.appendFile("log.txt", logSpotify, function (error) {
                 if (error) throw error;
                 console.log("Saved!");
             });
@@ -103,7 +103,7 @@ function liriCommand(responseCall, searchResult){
 
                 var logConcert = "\n\n-----Concert Log-----" + "\nArtist: " + artist + "\nName of Venue: " + venueName + "\nVenue Location: " + location + "\nDate of event: " + date + "\n";
                 // appending information to log.txt file
-                appendFile("log.txt", logConcert, function (error) {
+                fs.appendFile("log.txt", logConcert, function (error) {
                     if (error) throw error;
                     console.log("Saved!");
                 });
@@ -140,7 +140,7 @@ function liriCommand(responseCall, searchResult){
 
                 var logMovie = "\n\n-----Movie Log-----" + "\nMovie Title: " + title + "\nRelease Year: " + year + "\nMovie Rated: " + rated + "\nIMDb Rating: " + imdbRating + "\nRotten Tomatoes Rating: " + tomRating + "\nProduced in: " + produced + "\nLanguage: " + lang + "\nPlot: " + plot + "\nCast: " + cast + "\n\n";
 
-                appendFile("log.txt", logMovie, function (error) {
+                fs.appendFile("log.txt", logMovie, function (error) {
                     if (error) throw error;
                     console.log("Saved!");
                 });
@@ -167,5 +167,4 @@ function liriCommand(responseCall, searchResult){
                 liriCommand(userInput, searchResult);
             }
         });
-    }
-;
+    };
