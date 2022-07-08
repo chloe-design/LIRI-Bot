@@ -19,6 +19,6 @@
   "homepage": "https://github.com/chloe-design/LIRI-node-app#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "moment": "^2.24.0"
+    "moment": "^2.29.4"
   }
 }
